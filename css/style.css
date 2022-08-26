@@ -39,8 +39,38 @@ a {
     padding: 1rem 2rem;
     margin-left: 1.5rem;
 }
+/* Hamburger */
+.hamburger{
+    display: none;
+    top: 80px;
+    right: 20px;
+}
 
-/* Nvabar */
+.bar{
+    position: relative;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+}
+.bar::after{
+    content: '';
+    position: absolute;
+    width:20px;
+    height:2px;
+    top:5px;
+    right:0px;
+    background-color:#fff
+}
+.bar::before{
+    content: '';
+    position: absolute;
+    width:20px;
+    height:2px;
+    top:-5px;
+    right:0px;
+    background-color:#fff
+}
+/* Navbar */
 #navbar {
     background-color: var(--background);
 
@@ -82,28 +112,32 @@ a {
     width: 700px;
     text-align: justify;
 }
-.heading{
+
+.heading {
     font-size: 2.5rem;
     margin-bottom: 5rem;
 }
-.title{
+
+.title {
     font-size: 1.9rem;
     font-weight: 900;
     margin-bottom: 2.5rem;
 }
-.lead{
+
+.lead {
     font-size: 1.1rem;
     width: 450px;
     margin-bottom: 5rem;
 }
-.arrow{
+
+.arrow {
     margin-top: 6px;
     width: 30px;
     height: 30px;
     display: block;
 }
 
-.card{
+.card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -114,26 +148,31 @@ a {
     height: 300px;
     box-shadow: 0px 10px 20px rgb(139, 139, 139);
 }
-.card-img{
+
+.card-img {
     background-color: rgb(247, 218, 218);
     padding: 2.5rem;
     margin-top: 1.5rem;
     border-radius: 50%;
 }
-.card-img img{
+
+.card-img img {
     width: 70px;
 }
-.card-content{
+
+.card-content {
     text-align: center;
     border-radius: 25px;
 
 }
-.card-contents{
-    color: #fff ;
+
+.card-contents {
+    color: #fff;
     text-align: center;
     border-radius: 25px;
     background-color: var(--background);
 }
+
 /* Hero-Section */
 #hero {
     background-color: var(--background);
@@ -178,35 +217,242 @@ a {
 #os .container .os-img {
     flex-basis: 50%;
 }
-#os .container .os-content .inner-content{
+
+#os .container .os-content .inner-content {
     display: flex;
     gap: 2rem;
 
 }
 
 /* Feature */
-#feature{
+#feature {
     max-width: 1600px;
     margin: 0 auto;
     padding: 0 5rem;
 }
-#feature .heading{
+
+#feature .heading {
     text-align: center;
 }
-#feature .container{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
+
+#feature .container {
+    /* display: grid;
+    grid-template-columns: repeat(4, 1fr); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    height: 100%;
 }
-.card-content h2{
+
+.card-content h2 {
     font-weight: 900;
     font-size: 2rem;
 }
-.card-content p{
+
+.card-content p {
     font-weight: 700;
 }
-.card .green{
+
+.card .green {
     background-color: #ccf7f3;
 }
-.card .purple{
+
+.card .purple {
     background-color: #e0caf5;
+}
+
+
+/* media Query */
+
+@media screen and (max-width:1536px) {
+    li {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.8rem;
+    }
+
+    #hero .container .hero-content {
+        width: 700px;
+    }
+
+    .heading-white {
+        font-size: 4rem;
+    }
+
+    .lead-white {
+        font-size: 1rem;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        margin: 1rem;
+        width: 250px;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width:1280px) {
+
+    #hero .container .hero-content {
+        width: 550px;
+    }
+
+    #hero .container .hero-img {
+        flex-basis: 80%;
+    }
+
+    .heading-white {
+        font-size: 3rem;
+    }
+
+    .lead-white {
+        font-size: 1rem;
+        width: 500px;
+    }
+
+
+
+    .card {
+        margin: 1rem;
+        width: 200px;
+        height: 100%;
+    }
+
+    .card-content h2 {
+        font-size: 1.5rem;
+
+    }
+
+    .card-content p {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width:1024px) {
+
+    #hero .container .hero-content {
+        width: 380px;
+    }
+
+    .heading-white {
+        width: 400px;
+    }
+
+    .lead-white {
+        width: 350px;
+    }
+
+    .card {
+        margin: 0.5rem;
+        width: 180px;
+        height: 100%;
+    }
+
+    .card-content h2 {
+        font-size: 1.3rem;
+
+
+    }
+
+    .card-content p {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .hamburger{
+        display: block;
+    }
+    .menu,
+    .btn {
+        display: none;
+    }
+    .heading-white{
+        font-size: 2.3rem;
+        text-align: center;
+    }
+    .lead-white{
+        font-size: 1rem;
+        text-align: center;
+    }
+    .heading{
+        font-size: 1.5rem;
+    }
+    .title{
+        font-size: 1rem;
+    }
+    .lead{
+        font-size: 0.8rem;
+        width: 300px;
+    }
+
+    .navbar,
+    #os .container,
+    #hero .container,
+    #os .container,
+    #feature {
+        padding: 1rem;
+    }
+
+    #hero .container {
+        flex-direction: column;
+        height: 1000px;
+        width: 100vw;
+        overflow: hidden;
+    }
+
+    #hero .container .hero-content {
+        text-align: center;
+    }
+
+    #os .container{
+        flex-direction: column;
+        height: 1500px;
+        gap: 1rem;
+    }
+
+    .text .lead{
+        wi
+    }
+    #feature .container{
+        grid-template-columns: repeat(2,1fr);
+        gap: 1rem;
+        overflow-x: hidden;
+    }
+ 
+    .card{
+        width: 150px;
+        height: 100%;
+    }
+    .card-img{
+        padding: 1rem;
+    }
+    .card-content h2{
+        font-size: 1rem;
+    }
+    .card-contents h2{
+        font-size: 1rem;
+    }
+    .card-content p{
+        font-size: 0.7rem;
+    }
+    .card-contents p{
+        font-size: 0.7rem;
+    }
 }
